@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Internet of Secure Things</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+</head>
+  <body class="text-center">
+
+       <div class="container">
+	       <div class="row">
+                  <div class="col-6">
+			  <h1>Welcome to the IOSET API</h1>
+			  <p>This is a first test page for the IOSET Data Network for IoT 4.0</p>
+	          </div>
+	       </div>
+
+
+                <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                       <button id="addgroup"  class="btn btn-outline-primary"
+                           type="button" onclick="queryreading()">  Query Readings </button>
+                    </div>
+                    <div class="col-7">
+<p>
+</p>
+                    </div>
+                     <div class="col-3">
+                    </div>
+               </div>
+
+
+               <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Instrument Identity To Read"
+                         id="InstrIdentityQuery" aria-label="InstrIdentityQuery"
+                         aria-describedby="InstrIdentityQuery">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+               <div class="col-12">
+                  <p id="readings" ></p>
+               </div>
+
+
+                <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                       <button id="addgroup"  class="btn btn-outline-primary"
+                           type="button" onclick="addreading()">  Add Reading </button>
+                    </div>
+                    <div class="col-7">
+<p>
+Example - VolWater10kPa=7, VolWater33kPa=0, VolWater100kPa=0, Longitude=140.132126, Latitude=-37.567760, InstrIdentity=20, 
+ReadingDate = 2020-08-01T19:20:00.655Z
+</p>
+                    </div>
+                     <div class="col-3">
+                    </div>
+               </div>
+
+               <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Instrument Identity"
+                         id="InstrIdentity" aria-label="InstrIdentity"
+                         aria-describedby="InstrIdentity">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+
+               <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Reading Date"
+                         id="ReadingDate" aria-label="ReadingDate"
+                         aria-describedby="ReadingDate">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+
+               <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Vol Water 10kPa Percentage"
+                         id="VolWater10kPa" aria-label="VolWater10kPa"
+                         aria-describedby="VolWater10kPa">
+                    </div>
+                     <div class="col-3">
+		     </div>
+	       </div>
+
+               <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Vol Water 33kPa Percentage"
+                         id="VolWater33kPa" aria-label="VolWater33kPa"
+                         aria-describedby="VolWater33kPa">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+	         <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Vol Water 100kPa Percentage"
+                         id="VolWater100kPa" aria-label="VolWater100kPa"
+                         aria-describedby="VolWater100kPa">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+
+              <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Longitude"
+                         id="Longitude" aria-label="Longitude"
+                         aria-describedby="Longitude">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+
+              <div class="row" style="margin-bottom: 10px">
+
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col-7">
+                         <input type="text" class="form-control" placeholder="Latitude"
+                         id="Latitude" aria-label="Latitude"
+                         aria-describedby="Latitude">
+                    </div>
+                     <div class="col-3">
+                     </div>
+               </div>
+               <div class="col-12">
+                  <p id="message" ></p>
+               </div>
+
+<script>
+
+
+function queryreading() {
+
+   var InstrIdentity = document.getElementById('InstrIdentityQuery').value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",  "https://iosetpro.com:3000/api/getinstr", true);
+//    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    xhttp.send(JSON.stringify({"InstrIdentity": InstrIdentity}) );
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.response);
+             var text="";
+        if (data.message === "correct") {
+              var querydata= "";
+              for (i=0;i<data.doc.length;i++) {
+                  querydata=querydata.concat(JSON.stringify(data.doc[i]));
+              }
+              document.getElementById("readings").innerHTML=querydata;
+        } else {
+              document.getElementById("readings").innerHTML="no data";
+        }
+      }
+    };
+}
+
+
+
+
+function addreading() {
+
+   var VolWater10kPa = document.getElementById('VolWater10kPa').value;
+   var VolWater33kPa = document.getElementById('VolWater33kPa').value;
+   var VolWater100kPa = document.getElementById('VolWater100kPa').value;
+   var Longitude = document.getElementById('Longitude').value;
+   var Latitude = document.getElementById('Latitude').value;
+   var InstrIdentity = document.getElementById('InstrIdentity').value;
+   var ReadingDate = document.getElementById('ReadingDate').value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",  "https://iosetpro.com:3000/api/addinstr", true);
+//    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+    xhttp.send(JSON.stringify({"VolWater10kPa": VolWater10kPa, "VolWater33kPa": VolWater33kPa, "VolWater100kPa": VolWater100kPa, "Longitude": Longitude, "Latitude": Latitude, "InstrIdentity": InstrIdentity, "ReadingDate": ReadingDate}) );
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.response);
+             var text="";
+        if (data.message === "Correct") {
+              document.getElementById("message").innerHTML="data added";
+        } else {
+              document.getElementById("message").innerHTML="data not read";
+        }
+      }
+    };
+}
+
+</script>
+
+
+
+        </div>
+      </div>
+
+  </body>
+</html>
+
+
